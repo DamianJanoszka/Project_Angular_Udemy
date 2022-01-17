@@ -1,13 +1,7 @@
-<label>Second exercise </label>
-
-<input type="text"
-       class="form-control"
-       [(ngModel)] = "userName">
-
-<p>{{ userName }}
-</p>
-<button
-  class="btn btn-primary"
-  [disabled]="userName===''"
-  (click)="userName = ''">Reset server</button>
+<button (click)="toggle()" class="btn btn-primary">Display Details</button>
+<p *ngIf="paragraphStatus">  Something</p>
+<div *ngFor="let click of countClicksArray"
+  [ngStyle] = "{backgroundColor: click >=5 ? 'blue' : 'transparent'}"
+  [ngClass] = " {'textColor': click >=5}">
+  {{click}}</div>
 
