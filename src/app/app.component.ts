@@ -7,5 +7,15 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-first-app';
-  userName = 'default-User-Name'
+
+  odd: number[] = [];
+  even: number[] =[];
+
+  onStartGame(firedNumber: number){
+  console.log(firedNumber);
+    if(firedNumber % 2 ===0){
+      this.even.push(firedNumber);
+    } else {
+    this.odd.push(firedNumber);}
+  }
 }

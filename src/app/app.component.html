@@ -1,13 +1,9 @@
-<label>Second exercise </label>
+<label>Fourth exercise </label>
 
 <input type="text"
-       class="form-control"
-       [(ngModel)] = "userName">
-
-<p>{{ userName }}
-</p>
-<button
-  class="btn btn-primary"
-  [disabled]="userName===''"
-  (click)="userName = ''">Reset server</button>
+       class="form-control">
+<app-game-control
+(incrementingValueAction)="onStartGame($event)"></app-game-control>
+<app-odd *ngFor="let numbers of odd" [number]="numbers"></app-odd>
+<app-even *ngFor="let numbers of even" [number]="numbers"></app-even>
 
