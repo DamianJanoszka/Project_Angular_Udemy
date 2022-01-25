@@ -1,5 +1,5 @@
-import { Component } from '@angular/core';
-
+import { Component, ViewChild  } from '@angular/core';
+import { NgForm } from '@angular/forms';
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -7,5 +7,11 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'my-first-app';
-  userName = 'default-User-Name'
+
+  @ViewChild('myForm', { static: false }) signupForm: NgForm;
+  selectedLevel = 'Pro';
+
+  onSubmit() {
+    console.log(this.signupForm.value);
+  }
 }
